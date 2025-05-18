@@ -1,0 +1,41 @@
+.text-variant-button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin: 0 8px;
+}
+
+
+.contained {
+  background-color: #90caf9;
+  color: black;
+  border: none;
+}
+
+.contained:hover {
+  background-color: #258fe5;
+}
+.outlined {
+  background-color: transparent;
+  color: #35393c;
+  border: 2px solid #1c1d1e;
+}
+
+
+.text {
+  background-color:#35393c ;
+  color: #037ee2;
+  border: none;
+}
+
+.text:hover {
+  background-color: rgba(144, 202, 249, 0.1);
+}
+.disabled {
+  background-color: #e0e0e0;
+  color: #363232 ;
+  border: none ;
+  cursor: not-allowed ;
+  pointer-events: none;
+}
