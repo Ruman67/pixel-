@@ -1,32 +1,30 @@
 import { useState, useRef, useEffect } from 'react';
-import './Accor.css';
+import './Accor.css'; // Your CSS is here
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
-const Accor = () => {
+type AccordionItem = {
+  title: string;
+  content: string;
+};
+
+type AccorProps = {
+  items: AccordionItem[];
+};
+
+const Accor = ({ items }: AccorProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const accordionItems = [
-    {
-      title: 'first one',
-      content: 'a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering.'
-    },
-    {
-      title: 'second one',
-      content: 'a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering.'
-    }
-  ];
-
-  const toggleAccor = (index: number) => {
+  const toggle = (index: number) => {
     setOpenIndex(prev => (prev === index ? null : index));
   };
 
   return (
     <div>
-      {accordionItems.map((item, index) => (
-        <AccordionItem
+      {items.map((item, index) => (
+        <AccordionItemComponent
           key={index}
           isOpen={openIndex === index}
-          onToggle={() => toggleAccor(index)}
+          onToggle={() => toggle(index)}
           title={item.title}
           content={item.content}
         />
@@ -42,7 +40,7 @@ type AccordionItemProps = {
   content: string;
 };
 
-const AccordionItem = ({ isOpen, onToggle, title, content }: AccordionItemProps) => {
+const AccordionItemComponent = ({ isOpen, onToggle, title, content }: AccordionItemProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState('0px');
 

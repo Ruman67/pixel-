@@ -7,6 +7,21 @@ import Accor from './components/accor'
 import DropdownMenu from './components/dropDownMenu'
 import Alert from './components/alert'
 
+const accordionItems = [
+  {
+    title: 'first one',
+    content: 'a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering.'
+  },
+  {
+    title: 'second one',
+    content: 'a distinct section of a piece of writing, usually dealing with a single theme and indicated by a new line, indentation, or numbering.'
+  },
+  {
+    title:'third one',
+    content:'disticnt section'
+  }
+];
+
 function App() {
   return (
     <>
@@ -19,7 +34,7 @@ function App() {
         <Button label="Disabled" variant="contained" disabled />  
        <Alert/>
       </div>
-       <Accor/>
+       <Accor items={accordionItems} />
        
        
     </>
