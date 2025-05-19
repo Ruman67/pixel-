@@ -6,6 +6,8 @@ import  './components/Accor.css'
 import Accor from './components/accor'
 import DropdownMenu from './components/dropDownMenu'
 import Alert from './components/alert'
+import Loader from './components/loader'
+
 
 const accordionItems = [
   {
@@ -35,8 +37,8 @@ function App() {
        <Alert/>
       </div>
        <Accor items={accordionItems} />
-       
-       
+    
+       <Loader/>
     </>
   )
 }
